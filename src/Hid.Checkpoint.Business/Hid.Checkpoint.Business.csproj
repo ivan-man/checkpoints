@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Hid.Checkpoint.Audit\Hid.Checkpoint.Audit.csproj" />
+      <ProjectReference Include="..\Hid.Checkpoint.Caching\Hid.Checkpoint.Caching.csproj" />
+      <ProjectReference Include="..\Hid.Checkpoint.Common\Hid.Checkpoint.Common.csproj" />
+      <ProjectReference Include="..\Hid.Checkpoint.DataAccess.Ef\Hid.Checkpoint.DataAccess.Ef.csproj" />
+      <ProjectReference Include="..\Hid.Checkpoint.MediatR\Hid.Checkpoint.MediatR.csproj" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="7.0.5" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+        <ProjectReference Include="..\Hid.Identity.Client\Hid.Identity.Client.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="CommandHandlers\Users\CreateUserCommandHandler.cs">
+        <DependentUpon>CreateUserCommand.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Handlers\Positions\" />
+    </ItemGroup>
+
+</Project>
